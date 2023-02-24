@@ -92,6 +92,22 @@ Here is an example configuration with description. Put it in the `MagicMirror/co
               { from: "true", to: "Open" },
               { from: "false", to: "Closed" }
             ]
+          },
+           {
+            topic: "smoky/3/outside/winddirection",
+            label: "Wind direction",
+            conversions: [
+              { from: "0-23", to: "N" }, //Range can be int
+			  { from: "23-68.9", to: "NE" }, //or decimal
+			  { from: "69-113.4", to: "E" },
+			  { from: "113.5-158.9", to: "SE" },
+			  { from: "159-203", to: "S" },
+			  { from: "204-248", to: "SW" },
+			  { from: "249-293", to: "W" },
+			  { from: "294-338", to: "NW" },
+			  { from: "338-360", to: "N" } 
+              { from: "1\\-1000", to: "NotADirection" } //the '-' can be escaped to not get used as a range indicator
+            ]
           }
         ]
       }
